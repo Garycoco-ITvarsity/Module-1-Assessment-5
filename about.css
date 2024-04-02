@@ -1,0 +1,27 @@
+/* Setting the font family of the entire body to first take the user's set font on the machine */
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.container {
+    padding: 25px;
+}
+/* Setting the max width of the gallery div to 1200px so that we dont take the 
+entire screen in much bigger devices. The div will be centered since we set it above.
+
+I used a display of grid and setting the gap to 10px so that we can have spaces between our images
+
+For the grid template columns property, I used a repeat with an autofit and a minmax so that we can have
+a responsive layout. If the content doesn't meet the 500px width
+then it will automatically take the entire width*/
+.gallery {
+    width: 100%;
+    max-width: 1200px;
+    display: grid;
+    margin: auto;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 20px;
+}
+/* Setting the image to take the entire given space */
+.image img {
+    width: 100%;
+}

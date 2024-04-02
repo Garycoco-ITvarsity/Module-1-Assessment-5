@@ -1,0 +1,58 @@
+/* Removing the default margin, padding from the body and setting a font */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Setting the top app bar to fixed since I want it to be fixed at the top */
+.top-bar {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    background-color: rgb(198, 223, 255);
+    padding-block: 30px;
+}
+/* We set the UL to only bw as wide as the content inside, then center
+   it inside the top-app-bar */
+.top-bar ul {
+    width: fit-content;
+    margin: auto;
+}
+/* Setting the max width of the gallery div to 1200px so that we dont take the 
+entire screen in much bigger devices. The div will be centered since we use margin auto.
+
+I used a display of grid and setting the gap to 10px so that we can have spaces between our images
+
+For the grid template columns property, I used a repeat with an autofit and a minmax so that we can have
+a responsive layout. If the content doesn't meet the 500px width
+then it will automatically take the entire width*/
+.gallery {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 10px;
+    padding: 10px;
+}
+
+/* To have smooth carved corners I used a border radius */
+.gallery img {
+    width: 100%;
+    border-radius: 10px;
+}
+/* Removed the default styling of an anchor tag and giving it a color black
+I also changed the font family to first take the user's set font on the machine */
+.top-bar a {
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+    padding: 10px 30px;
+}
+/* When we hover over the text in our top bar, we change the background color of the
+   text */
+.top-bar a:hover {
+    background-color: brown;
+    border-radius: 10px;
+}
